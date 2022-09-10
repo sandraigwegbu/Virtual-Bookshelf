@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="box ms-5 mt-3">
+     <form action="{{ url_for('edit') }}" method="POST">
+        <h2>Book Name: {{book.title}}</h2>
+        <h5>Current Rating: {{book.rating}}</h5>
+         <input hidden="hidden" name="id" value="{{book.id}}">
+        <input class="mt-2" name="rating" type="text" placeholder="New Rating">
+        <button class="btn btn-primary mb-1 ms-2" type="submit">Change Rating</button>
+    </form>
+</div>
+{% endblock %}

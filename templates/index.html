@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="box ms-5 mt-3">
+    <h1>My Library <a class="btn btn-dark ms-1" href="{{ url_for('add') }}">Add New Book</a></h1>
+
+
+    {% if all_books == [] %}
+    <p>Library is empty.</p>
+    {% else: %}
+    <ul>
+        {% for book in all_books: %}
+        <li class="mb-2">
+            {{book.title}} - {{book.author}} - {{book.rating}}/10
+            <a class="btn btn-outline-primary ms-2" href="{{ url_for('edit', id=book.id) }}" role="button">Edit Rating</a>
+            <a class="btn btn-outline-primary" href="{{ url_for('delete', id=book.id) }}" role="button" >Delete</a>
+        </li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

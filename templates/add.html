@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="box ms-5 mt-3">
+    <form action="{{ url_for('add') }}" method="POST">
+        <h2 class="mb-3">Add New Book</h2>
+        <label>Book Name</label>
+        <input name="title" type="text">
+        <label class="ms-2">Book Author</label>
+        <input name="author" type="text">
+        <label class="ms-2">Rating</label>
+        <input name="rating" type="text">
+        <button class="btn btn-dark ms-2" type="submit">Add Book</button>
+    </form>
+</div>
+{% endblock %}
